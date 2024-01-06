@@ -2,6 +2,7 @@
 
 A integração é feita usando o ZAPIER que obseva quando tem uma nova atividade no STRAVA e sincroniza com o GYMRATS.
 
+O codigo quando cria a atividade no gymrats insere um comentario strava_id:<ID> ele usa para verificar se a atividade já existe no gymrats e se exister ele ignora.
 
 # Como usar 
 ## Primeiro passo:
@@ -209,3 +210,22 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 
 ```
+# Testando  o codigo localmente
+
+Edite o [gymrats.py](gymrats.py) e crie uma variavel input_data com o json abaixo:
+
+```pyhton
+input_data={
+    "duration_sec": 2926,
+    "title": "TESTE INTEGRATION",
+    "strava_id": "09808809890890809809809",
+    "challegend_id": 142155,
+    "distance": 100,
+    "calories": 111,
+    "email":"seu%40email.com",
+    "password":"",
+    "gymrats_account": "00000"
+}
+
+```
+
