@@ -26,6 +26,7 @@ Deixe o input data como a imagem
 ![Alt text](image.png)
 
 
+
 Salve os dados e publique, vc pode clicar no botão de testar parar testar a automação.
 
 # Snippets 
@@ -210,6 +211,36 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 
 ```
+### Obtendo os tipos de atividades:
+
+Algums modos de pontuação tem atividade cadastradas no desafios, vc precisa pegar o id de cada ativdade de cada desafio, use a request abaixo:
+
+```python
+import requests
+
+url = "https://www.gymrats.app/api/challenges/188096/activity_types"
+
+payload = {}
+headers = {
+  'Authorization': '',
+  'TE': 'gzip, deflate; q=0.5',
+  'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 12; Nexus 5 Build/SQ1D.220205.004)',
+  'Host': 'www.gymrats.app',
+  'Connection': 'Keep-Alive',
+  'Accept-Encoding': 'gzip, deflate, br'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+
+```
+
+
+
+
+
+
 # Testando  o codigo localmente
 
 Edite o [gymrats.py](gymrats.py) e crie uma variavel input_data com o json abaixo:
